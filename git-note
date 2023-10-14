@@ -1,0 +1,14 @@
+#when getting like this error: 
+-unable to resolve reference 'refs/remotes/origin/automate-panel-creation-phase-2': reference 
+broken
+
+=> git fetch origin
+=> git remote prune origin
+=> git gc --prune=now
+=> git checkout automate-panel-creation-phase-2
+=> git reset --hard origin/automate-panel-creation-phase-2
+=> git pull origin automate-panel-creation-phase-2
+-------------------------------------------------------------------------------------------
+
+
+

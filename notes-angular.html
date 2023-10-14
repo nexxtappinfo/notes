@@ -1,0 +1,49 @@
+<p>
+	If you want to load css file after component load follow this step:
+	<ul>
+		<li>import { Component, OnInit, ViewEncapsulation } from '@angular/core';</li>
+		<li>@Component({
+  selector: 'app-admin-panel',
+  templateUrl: './admin-panel.component.html',
+  styleUrls: ['./admin-panel.component.css',"../../../assets/css/argon-dashboard.css","../../../assets/css/nucleo-icons.css","../../../assets/css/nucleo-svg.css"],
+  encapsulation: ViewEncapsulation.None,
+})</li>
+	</ul>
+</p>
+
+
+====================================
+
+
+<p>
+want to use jquery follow this step:
+
+<ul>
+	<li>import * as $ from 'jquery';</li>
+	<li>
+		and use in:
+
+		ngOnInit() {
+
+    $('#onclick').on('click',function(){
+      alert('hi');
+    });
+
+  }
+
+	</li>
+</ul>
+</p>
+
+==============================================
+AbstractControl: This is the main class for controlling the behavior and properties of, FormGroup, FormControl, and FormArray.
+
+FormBuilder: It provides helpful methods to create control instances in Angular 7 Reactive Forms.
+
+FormGroup: FormGroup is a top-level API which maintains the values, properties and validation state of a group of AbstractControl instance in Angular 7.
+
+FormControl: It communicates with an HTML Form element like input or select tag, this api handles the individual form value and validation state.
+
+FormArray: FormArray API maintains the values, properties and validation state of an array of the AbstractControl instances.
+
+ngSubmit: This event is called when the form is submitted.
