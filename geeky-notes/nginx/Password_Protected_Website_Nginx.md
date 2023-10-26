@@ -18,11 +18,12 @@ cd /etc/nginx/sites-available
 ```
 - Open the Required Virtual Host File
 ```sh
-sudo nano default
+sudo nano website_host_file
 ```
 - Add below Content
 ```sh
 location /admin {
+  autoindex on;
   try_files $uri $uri/ =404;
   auth_basic "admin area";
   auth_basic_user_file /etc/nginx/.htpasswd;
