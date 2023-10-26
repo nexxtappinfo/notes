@@ -18,7 +18,7 @@ cd /etc/nginx/sites-available
 ```
 - Open the Required Virtual Host File
 ```sh
-sudo nano default
+sudo nano user_name
 ```
 - Add below Content
 ```sh
