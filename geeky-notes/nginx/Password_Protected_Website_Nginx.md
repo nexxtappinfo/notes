@@ -29,6 +29,26 @@ location /admin {
   auth_basic_user_file /etc/nginx/.htpasswd;
 }
 ```
+- Or You can Add below Content For Specific Domain allowed and redirect to specific page
+```sh
+location /storage {
+    autoindex on;
+    try_files $uri $uri/ =404;
+
+    set $realm "admin area";
+            set $realmpass "/etc/nginx/.htpasswd";
+
+    location ~* \.(jpg|jpeg|gif|png|webp) {
+        if ($http_referer ~* (https?://(www\.)?form.nexxtapp\.com)) {
+    set $realm "off";
+        }
+
+        auth_basic $realm;
+        auth_basic_user_file $realmpass;
+ error_page 401 = /403.html;
+    }
+}
+```
 - Check Syntax structure is valid
 ```sh
 sudo nginx -t OR sudo nginx -tV
