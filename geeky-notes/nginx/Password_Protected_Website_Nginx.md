@@ -29,6 +29,10 @@ location /admin {
   auth_basic_user_file /etc/nginx/.htpasswd;
 }
 ```
+- Check Syntax structure is valid
+```sh
+sudo nginx -t OR sudo nginx -tV
+```
 - Restart Nginx
 ```sh
 sudo service nginx restart
