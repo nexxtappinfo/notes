@@ -57,3 +57,17 @@ sudo nginx -t OR sudo nginx -tV
 ```sh
 sudo service nginx restart
 ```
+- Just For Information or Knowledge
+```sh
+The most important modifiers are:
+
+(none) No modifier at all means that the location is interpreted as a prefix. To determine a match, the location will now be matched against the beginning of the URI.
+
+=: The equal sign can be used if the location needs to match the exact request URI. When this modifier is matched, the search stops right here.
+
+~: Tilde means that this location will be interpreted as a case-sensitive RE match.
+
+~*: Tilde followed by an asterisk modifier means that the location will be processed as a case-insensitive RE match.
+
+^~: Assuming this block is the best non-RE match, a carat followed by a tilde modifier means that RE matching will not take place.
+```
