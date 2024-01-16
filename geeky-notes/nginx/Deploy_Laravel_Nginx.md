@@ -1,4 +1,4 @@
-### How to Point Domain and Deploy Laravel Project using Github on Nginx Remote Server or VPS
+![image](https://github.com/nexxtappinfo/notes/assets/147926560/04672d75-4b33-41c5-920f-7f69ed6fe49b)### How to Point Domain and Deploy Laravel Project using Github on Nginx Remote Server or VPS
 - Get Access to Remote Server via SSH
 ```sh
 Syntax:- ssh -p PORT USERNAME@HOSTIP
@@ -250,6 +250,9 @@ git pull
 ```
 - if you are using Vue with Laravel just run this command
 ```sh
+sudo apt-get install npm
+sudo apt-get install nodejs
+npm install
 npm run build
 ```
 ### That's It. Below setting are advanced settings to auto-deploy
