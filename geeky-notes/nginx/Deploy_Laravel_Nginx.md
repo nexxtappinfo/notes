@@ -252,7 +252,7 @@ git pull
 ```sh
 npm run build
 ```
-### That It below setting is advance settings to auto deploy
+### That's It. Below setting are advanced settings to auto-deploy
 
 ### How to Automate Laravel Deployment using Github Action
 - On Your Local Machine, Open Your Project using VS Code or any Editor
