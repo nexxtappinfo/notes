@@ -248,7 +248,7 @@ sudo ln -s /usr/share/phpmyadmin /var/www/project_folder_name/public/phpmyadmin
 ```sh
 git pull
 ```
-- if you ar using vue with laravel just run this command
+- if you are using Vue with Laravel just run this command
 ```sh
 npm run build
 ```
