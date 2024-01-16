@@ -248,6 +248,11 @@ sudo ln -s /usr/share/phpmyadmin /var/www/project_folder_name/public/phpmyadmin
 ```sh
 git pull
 ```
+- if you ar using vue with laravel just run this command
+```sh
+npm run build
+```
+### That It below setting is advance settings to auto deploy
 
 ### How to Automate Laravel Deployment using Github Action
 - On Your Local Machine, Open Your Project using VS Code or any Editor
