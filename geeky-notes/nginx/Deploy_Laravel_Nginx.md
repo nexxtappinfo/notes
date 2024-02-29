@@ -1,4 +1,4 @@
-### How to Point Domain and Deploy Laravel Project using Github on Nginx Remote Server or VPS
+![image](https://github.com/nexxtappinfo/notes/assets/147926560/04672d75-4b33-41c5-920f-7f69ed6fe49b)### How to Point Domain and Deploy Laravel Project using Github on Nginx Remote Server or VPS
 - Get Access to Remote Server via SSH
 ```sh
 Syntax:- ssh -p PORT USERNAME@HOSTIP
@@ -120,6 +120,42 @@ server{
     }
 }
 ```
+- Or You can use this for virtual host
+```sh
+server {
+    listen 80;
+    server_name nexxtapp.com www.nexxtapp.com;
+    root /var/www/nexxtapp.com/public;
+
+    add_header X-Frame-Options "SAMEORIGIN";
+    add_header X-XSS-Protection "1; mode=block";
+    add_header X-Content-Type-Options "nosniff";
+
+    index index.html index.htm index.php;
+
+    charset utf-8;
+
+    location / {
+        try_files $uri $uri/ /index.php?$query_string;
+    }
+
+    location = /favicon.ico { access_log off; log_not_found off; }
+    location = /robots.txt  { access_log off; log_not_found off; }
+
+    error_page 404 /index.php;
+
+    location ~ \.php$ {
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock;
+        fastcgi_index index.php;
+        fastcgi_param SCRIPT_FILENAME $realpath_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.(?!well-known).* {
+        deny all;
+    }
+}
+```
 - Enable Virtual Host or Create Symbolic Link of Virtual Host File
 ```sh
 Syntax:- sudo ln -s /etc/nginx/sites-available/virtual_host_file /etc/nginx/sites-enabled/virtual_host_file
@@ -212,6 +248,14 @@ sudo ln -s /usr/share/phpmyadmin /var/www/project_folder_name/public/phpmyadmin
 ```sh
 git pull
 ```
+- if you are using Vue with Laravel just run this command
+```sh
+sudo apt-get install npm
+sudo apt-get install nodejs
+npm install
+npm run build
+```
+### That's It. Below setting are advanced settings to auto-deploy
 
 ### How to Automate Laravel Deployment using Github Action
 - On Your Local Machine, Open Your Project using VS Code or any Editor

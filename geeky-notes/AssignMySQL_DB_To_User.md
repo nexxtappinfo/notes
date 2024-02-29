@@ -9,6 +9,10 @@ mysql -u root -p
 Syntax:- CREATE USER 'user_name'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'user_password';
 Example:- CREATE USER 'rahul'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'Hello123456#';
 ```
+- Or We can use this command to Create New User
+```sh
+CREATE USER 'nexxtapp_user'@'%' IDENTIFIED WITH mysql_native_password BY 'password';
+```
 - Create New Database
 ```sh
 Syntax:- CREATE DATABASE database_name;
